@@ -37,14 +37,14 @@ function imdburl_fix_single(url)
 	//console.log("Before:", url);
 	while(true)
 	{
-		var newurl = url.replace(/\?ref_?=[a-zA-Z0-9_]+$/, "").
-		             replace(/\?ref_?=[a-zA-Z0-9_]+#/, "#").
-		             replace(/\?ref_?=[a-zA-Z0-9_]+/, "?").
-		             replace(/&ref_?=[a-zA-Z0-9_]+/, "").
-		             replace(/&pf_rd_[a-zA-Z0-9_]*=[a-zA-Z0-9_-]*/g, "").
-		             replace(/\?pf_rd_[a-zA-Z0-9_]*=[a-zA-Z0-9_-]*$/, "").
-		             replace(/\?pf_rd_[a-zA-Z0-9_]*=[a-zA-Z0-9_-]*#/, "#").
-		             replace(/\?pf_rd_[a-zA-Z0-9_]*=[a-zA-Z0-9_-]*/, "");
+		var newurl = url.replace(/\?ref_?=[^#&]+$/, "").
+		             replace(/\?ref_?=[^#&]+#/, "#").
+		             replace(/\?ref_?=[^#&]+&/, "?").
+		             replace(/&ref_?=[^#&]+/, "").
+		             replace(/\?pf_rd_[a-zA-Z0-9_]*=[^#&]*$/, "").
+		             replace(/\?pf_rd_[a-zA-Z0-9_]*=[^#&]*#/, "#").
+		             replace(/\?pf_rd_[a-zA-Z0-9_]*=[^#&]*&/, "?").
+		             replace(/&pf_rd_[a-zA-Z0-9_]*=[^#&]*/g, "");
 		if(newurl == url)
 			break;
 		url = newurl;
