@@ -3,14 +3,16 @@
 // @description  Removes crap from IMDb URLs
 // @namespace    http://live.aulddays.com/
 // @include      http://imdb.com/*
+// @include      https://imdb.com/*
 // @include      http://www.imdb.com/*
+// @include      https://www.imdb.com/*
 // @author       Aulddays
 // @grant        none
-// @version      2.0
+// @version      2.1
 // @run-at       document-start
 // ==/UserScript==
 
-// Copyright 2013-2016 Aulddays
+// Copyright 2013-2019 Aulddays
 // Based on the script by Rennex
 /*
 This program is free software: you can redistribute it and/or modify
