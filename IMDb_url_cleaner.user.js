@@ -81,7 +81,7 @@ function fix_content()
 	XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
 	for (var i = 0; i < links.snapshotLength; i++)
 	{
-		a = links.snapshotItem(i);
+		var a = links.snapshotItem(i);
 		if(a.href.match(/imdb\.com\/.*ref_?=/) || a.href.match(/imdb\.com\/.*pf_rd_[a-zA-Z0-9_]*=/))
 			a.href = imdburl_fix_single(a.href);
 	}
